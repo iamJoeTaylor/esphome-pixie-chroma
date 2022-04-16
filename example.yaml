@@ -1,0 +1,32 @@
+esphome:
+  name: pixie-chroma
+  platform: ESP32
+  board: tinypico
+
+logger:
+
+external_components:
+  # When developing, you can just use the local directory as the source
+  # - source: .
+  - source: github://iamjoetaylor/esphome-pixie-chroma
+
+pixie_chroma:
+  id: pixie
+  pin: 5
+  pixies_x: 2
+  setup_lambda: |-
+    id(pixie).clear();
+    id(pixie).set_palette(RAINBOW);
+    id(pixie).set_animation(ANIMATION_PENDULUM);
+  loop_lambda: |-
+    id(pixie).print("hack");
+    id(pixie).show();
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
+
+ota:
+
+api:
