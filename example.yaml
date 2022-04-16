@@ -8,7 +8,7 @@ logger:
 external_components:
   # When developing, you can just use the local directory as the source
   # - source: .
-  - source: github://iamjoetaylor/esphome-pixie-chroma
+  - source: github://iamjoetaylor/esphome-pixie-chroma@main
 
 pixie_chroma:
   id: pixie
