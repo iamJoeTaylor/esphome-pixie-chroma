@@ -19,6 +19,7 @@ pixie_chroma:
     id(pixie).set_palette(RAINBOW);
     id(pixie).set_animation(ANIMATION_PENDULUM);
   loop_lambda: |-
+    id(pixie).clear();
     id(pixie).print("hack");
     id(pixie).show();
 
